@@ -4,6 +4,7 @@ from subprocess import run as srun, check_output
 from psutil import disk_usage, cpu_percent, swap_memory, cpu_count, virtual_memory, net_io_counters, boot_time
 from time import time
 from sys import executable
+from threading import Thread
 from telegram import InlineKeyboardMarkup
 from telegram.ext import CommandHandler
 
@@ -44,7 +45,7 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b><i><u>NSFW Mirror Bot Statistics</u></i></b>\n\n'\
+    stats = f'<b><i><u>Premium Mirror Bot Statistics</u></i></b>\n\n'\
             f'<b>Updated:</b> <code>{last_commit}</code>\n'\
             f'<b>I am Working For:</b> <code>{currentTime}</code>\n'\
             f'<b>Total Disk:</b> <code>{total}</code> [{disk}% In use]\n'\
